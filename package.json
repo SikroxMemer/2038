@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.1",
+    "bootstrap-icons": "^1.10.5",
     "browserify-fs": "^1.0.0"
   }
 }

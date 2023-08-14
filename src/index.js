@@ -2,6 +2,9 @@
 
 import './styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js'
+import 'bootstrap/dist/css/bootstrap-grid.css'
+
 
 import Load from './Load';
 import Show from './Show';
@@ -12,6 +15,7 @@ import Show from './Show';
 let Files  = document.getElementById('Path');
 let Button = document.getElementById('Show');
 let MyForm = document.getElementById('myForm');
+let Reset  = document.getElementById('Reset');
 
 Files.style = "content:Select some files;"
 
@@ -39,10 +43,13 @@ const UI = () => {
         Image.src = image;
         Div.append(Image)
 
-        Image.setAttribute('class' , 'Image border border-1')
+        Div.setAttribute('class' , 'col-md-4 col-sm-6 col-12')
+        Image.setAttribute('class' , 'w-100 mb-2 rounded')
 
-        document.getElementById('Image-galery').append(Div);
+        document.getElementById('Gallery').append(Div);
     });
 }
+
+Reset.addEventListener('click' , () => {window.location.reload()})
 
 Show(Button , 'click' , UI);

@@ -4,33 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= htmlWebpackPlugin.options.title %>
-    </title>
+    <title>Document</title>
 </head>
 
 <body>
-    <h3 class="text-center m-5">
-        Input
-    </h3>
-    <section class="m-5">
-        <div class="bg-dark p-5 border rounded">
-            <form id="myForm" class="d-flex gap-2">
-                <label for="Path" class="form-label"></label>
-                <input id="Path" class="form-control" type="file" multiple placeholder="Paste folder path ...">
-
-                <button id='Show' class="btn btn-success">Show</button>
-                <button id='Reset' class="btn btn-info" onclick="window.location.reload()">Reset</button>
-            </form>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">2038</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="https://github.com/SikroxMemer">
+                        <i class="bi bi-github"></i>Github
+                    </a>
+                </div>
+            </div>
         </div>
-    </section>
-    <h3 class="text-center">
-        Output
-    </h3>
-    <!--Output;-->
-    <section id="Image-galery" class="Image-galery bg-dark rounded">
+    </nav>
+    <main class="container-fluid">
+        <section class="bg-dark p-5 m-5 rounded">
+            <p class="text-light">
+                Try adding your local images to preview you them , once you done 
+                click on <span class="text-success">Show</span> and
+                to reset click on <span class="text-danger">Reset.</span>
+            </p>
+            <form id="myForm" class="d-flex flex-column flex-md-row gap-3">
+                <input class="form-control" type="file" multiple id="Path">
+                <button id="Show" class="btn btn-success">Show</button>
+                <button id="Reset" class="btn btn-danger">Reset</button>
+            </form>
+        </section>
         
-    </section>
+        <section id="Gallery" class="row bg-dark p-5 rounded m-5"></section>
+    </main>
 </body>
-
 </html>
