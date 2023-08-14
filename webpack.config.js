@@ -11,7 +11,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name][contenthash].js',
-        clean: true
+        clean: true,
+        assetModuleFilename : '[name][ext]',
     },
     devtool: 'source-map',
 
@@ -31,14 +32,15 @@ module.exports = {
     module: {
         rules: [
             {test: /\.scss$/,use: ['style-loader' , 'css-loader', 'sass-loader']},
-            {test: /\.css$/,use: ['style-loader' , 'css-loader' , 'sass-loader']}
+            {test: /\.css$/,use: ['style-loader' , 'css-loader' , 'sass-loader']},
+            {test : /\.(png|svg|jpeg|gif|jpg)$/i , type : 'asset/resource'}
         ]
     },
     
     plugins: [
         new HtmlWebpackPlugin(
             {
-                title: 'webpack-app',
+                title: '2038',
                 filename: 'index.html',
                 template: 'src/template.html'
             }

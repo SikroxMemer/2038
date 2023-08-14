@@ -4,34 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        webpack-app
-    </title>
-<script defer src="bundleb8e1c62d6d8dcb1942e3.js"></script></head>
+    <title>Document</title>
+<script defer src="bundlebd7ee294523996dfaa3e.js"></script></head>
 
 <body>
-
-    <section class="m-5 d-flex flex-row align-items-center">
-        <div class="bg-dark p-5 border rounded">
-            <form id="myForm" class="gap-3">
-                <input id="Path" class="btn btn-primary" type="file" multiple placeholder="Paste folder path ..." >
-                <button id='Show'  class="btn btn-success">Show</button>
-                <button id='Reset' class="btn btn-info" onclick="window.location.reload()">Reset</button>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">2038</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="https://github.com/SikroxMemer">
+                        <i class="bi bi-github"></i>Github
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="container-fluid">
+        <section class="bg-dark p-5 m-5 rounded">
+            <p class="text-light">
+                Try adding your local images to preview you them , once you done 
+                click on <span class="text-success">Show</span> and
+                to reset click on <span class="text-danger">Reset.</span>
+            </p>
+            <form id="myForm" class="d-flex flex-column flex-md-row gap-3">
+                <input class="form-control" type="file" multiple id="Path">
+                <button id="Show" class="btn btn-success">Show</button>
+                <button id="Reset" class="btn btn-danger">Reset</button>
             </form>
-        </div>
+        </section>
         
-        &nbsp;
-
-        <div class="bg-dark p-5 border rounded text-light">
-            <h4>
-                webpack-app
-            </h4>
-        </div>
-
-    </section>
-    <!--Output;-->
-    <section id="Image-galery">
-
-    </section>
+        <section id="Gallery" class="row bg-dark p-5 rounded m-5"></section>
+    </main>
 </body>
 </html>

@@ -3,8 +3,13 @@
 import './styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js'
-import 'bootstrap/dist/css/bootstrap-grid.css'
 
+import icon from './assets/icon.png';
+
+
+document.getElementById('link').setAttribute(
+    'href' , icon
+)
 
 import Load from './Load';
 import Show from './Show';
