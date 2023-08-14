@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= htmlWebpackPlugin.option.title %></title>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
 </head>
+
 <body>
-    <div class="container">
-        <h3>Hello World</h3>
-    </div>
+    <section class="m-5 d-flex flex-row align-items-center">
+        <div class="container">
+            <input id="Path" type="file" multiple placeholder="Paste folder path ...">
+            &nbsp;
+            <button id='Show' class="btn btn-primary">Show</button>
+        </div>
+        &nbsp;
+        <div class="container">
+            <h4>Image Info :</h4>
+        </div>
+    </section>
+    <section class="Image-galery">
+        
+    </section>
 </body>
 </html>
