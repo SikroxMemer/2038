@@ -7,16 +7,16 @@
     <title>
         webpack-app
     </title>
-<script defer src="bundle48159282506facced012.js"></script></head>
+<script defer src="bundleb8e1c62d6d8dcb1942e3.js"></script></head>
 
 <body>
 
     <section class="m-5 d-flex flex-row align-items-center">
         <div class="bg-dark p-5 border rounded">
-            <form id="myForm">
-                <input id="Path" class="btn btn-primary" type="file" multiple placeholder="Paste folder path ..." onload="">
-                &nbsp;
-                <button id='Show' class="btn btn-primary">Show</button>
+            <form id="myForm" class="gap-3">
+                <input id="Path" class="btn btn-primary" type="file" multiple placeholder="Paste folder path ..." >
+                <button id='Show'  class="btn btn-success">Show</button>
+                <button id='Reset' class="btn btn-info" onclick="window.location.reload()">Reset</button>
             </form>
         </div>
         
@@ -30,7 +30,7 @@
 
     </section>
     <!--Output;-->
-    <section class="Image-galery">
+    <section id="Image-galery">
 
     </section>
 </body>

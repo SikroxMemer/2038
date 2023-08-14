@@ -1,20 +1,11 @@
-/**
-Generic Customization
-**/
-
-.container {
-    background-color:#ccc;
-    border:0.5px solid #ccc;
-    padding:25px;
-    border-radius:15px;
-}
-
 .Image-galery {
     display:grid;
-    grid-template-columns:repeat(3 , auto);
+    grid-template-columns:repeat(4 , auto);
+    gap:10px;
+    margin:50px;
+    padding:50px;
 }
 
 .Image {
-    width:50px;
+    width:75%;
 }
-

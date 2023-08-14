@@ -10,28 +10,27 @@
 </head>
 
 <body>
-
-    <section class="m-5 d-flex flex-row align-items-center">
+    <h3 class="text-center m-5">
+        Input
+    </h3>
+    <section class="m-5">
         <div class="bg-dark p-5 border rounded">
-            <form id="myForm" class="gap-3">
-                <input id="Path" class="btn btn-primary" type="file" multiple placeholder="Paste folder path ..." >
-                <button id='Show'  class="btn btn-success">Show</button>
+            <form id="myForm" class="d-flex gap-2">
+                <label for="Path" class="form-label"></label>
+                <input id="Path" class="form-control" type="file" multiple placeholder="Paste folder path ...">
+
+                <button id='Show' class="btn btn-success">Show</button>
                 <button id='Reset' class="btn btn-info" onclick="window.location.reload()">Reset</button>
             </form>
         </div>
-        
-        &nbsp;
-
-        <div class="bg-dark p-5 border rounded text-light">
-            <h4>
-                <%= htmlWebpackPlugin.options.title %>
-            </h4>
-        </div>
-
     </section>
+    <h3 class="text-center">
+        Output
+    </h3>
     <!--Output;-->
-    <section id="Image-galery">
-
+    <section id="Image-galery" class="Image-galery bg-dark rounded">
+        
     </section>
 </body>
+
 </html>

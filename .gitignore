@@ -1,1 +1,4 @@
+# Folders to be ignored
 node_modules
+# Scripts
+user.sh

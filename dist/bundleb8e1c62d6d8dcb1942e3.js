@@ -12467,7 +12467,7 @@ Generic Customization
 
 .Image {
   width: 50px;
-}`, "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA;;EAAA;AAIA;EACI,sBAAA;EACA,wBAAA;EACA,aAAA;EACA,mBAAA;AAAJ;;AAGA;EACI,aAAA;EACA,sCAAA;AAAJ;;AAGA;EACI,WAAA;AAAJ","sourcesContent":["/**\r\nGeneric Customization\r\n**/\r\n\r\n.container {\r\n    background-color:#ccc;\r\n    border:0.5px solid #ccc;\r\n    padding:25px;\r\n    border-radius:15px;\r\n}\r\n\r\n.Image-galery {\r\n    display:grid;\r\n    grid-template-columns:repeat(3 , auto);\r\n}\r\n\r\n.Image {\r\n    width:50px;\r\n}\r\n\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA;;EAAA;AAIA;EACI,sBAAA;EACA,wBAAA;EACA,aAAA;EACA,mBAAA;AAAJ;;AAGA;EACI,aAAA;EACA,sCAAA;AAAJ;;AAGA;EACI,WAAA;AAAJ","sourcesContent":["/**\nGeneric Customization\n**/\n\n.container {\n    background-color:#ccc;\n    border:0.5px solid #ccc;\n    padding:25px;\n    border-radius:15px;\n}\n\n.Image-galery {\n    display:grid;\n    grid-template-columns:repeat(3 , auto);\n}\n\n.Image {\n    width:50px;\n}\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13380,21 +13380,40 @@ __webpack_require__.r(__webpack_exports__);
 // // // // // // // // // // // // // //
 
 
-let Files = document.getElementById('Path')
+let Files  = document.getElementById('Path');
+let Button = document.getElementById('Show');
+let MyForm = document.getElementById('myForm');
+
+MyForm.addEventListener('submit' , event => {event.preventDefault();});
+
 let ArrayOfImages = new Array();
+
 
 const BlobImages = (0,_Load__WEBPACK_IMPORTED_MODULE_2__["default"])(Files , ArrayOfImages);
 
+const UI = () => {
+    BlobImages.forEach((image) => {
 
-(0,_Show__WEBPACK_IMPORTED_MODULE_3__["default"])(
-    Files , 'load' , () => {
-        console.log("This file is loaded")
-    }
-)
+        let Section     = document.createElement('section');
+        let Div         = document.createElement('div')
+        let Image       = document.createElement('img');
 
+        Section.setAttribute('class' , 'row gx-5');
+        Div.setAttribute('class' , 'col');
 
+        Image.setAttribute('class' , 'w-50');
+
+        Image.src = image;
+        Div.append(Image)
+
+        document.getElementById('Image-galery').append(Div);
+    });
+    Button.disabled = true;
+}
+
+;(0,_Show__WEBPACK_IMPORTED_MODULE_3__["default"])(Button , 'click' , UI);
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle48159282506facced012.js.map
+//# sourceMappingURL=bundleb8e1c62d6d8dcb1942e3.js.map
