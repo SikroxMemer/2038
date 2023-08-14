@@ -1,6 +1,6 @@
 # 2038 Web App Image Previewer
 
-![2038 Web App Logo](/src/assets/icon.png)
+<img src="/src/assets/icon.png" alt="2038" width="200"/>
 
 The **2038 Web App Image Previewer** is a simple and intuitive tool designed to help users quickly preview images in a sleek and efficient manner. Whether you're a photographer, designer, or simply an individual who loves sharing images, this web app provides a seamless experience for viewing and exploring images.
 
