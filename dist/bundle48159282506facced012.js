@@ -12450,7 +12450,24 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ``, "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `/**
+Generic Customization
+**/
+.container {
+  background-color: #ccc;
+  border: 0.5px solid #ccc;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.Image-galery {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.Image {
+  width: 50px;
+}`, "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA;;EAAA;AAIA;EACI,sBAAA;EACA,wBAAA;EACA,aAAA;EACA,mBAAA;AAAJ;;AAGA;EACI,aAAA;EACA,sCAAA;AAAJ;;AAGA;EACI,WAAA;AAAJ","sourcesContent":["/**\r\nGeneric Customization\r\n**/\r\n\r\n.container {\r\n    background-color:#ccc;\r\n    border:0.5px solid #ccc;\r\n    padding:25px;\r\n    border-radius:15px;\r\n}\r\n\r\n.Image-galery {\r\n    display:grid;\r\n    grid-template-columns:repeat(3 , auto);\r\n}\r\n\r\n.Image {\r\n    width:50px;\r\n}\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12986,9 +13003,9 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/list.js":
+/***/ "./src/Load.js":
 /*!*********************!*\
-  !*** ./src/list.js ***!
+  !*** ./src/Load.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -12996,16 +13013,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fs */ "fs");
-/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(fs__WEBPACK_IMPORTED_MODULE_0__);
+/**
+ * 
+ * @param {HTMLInputElement} input 
+ * @param {Array<null>} EmptyArray 
+ * @returns {Array<Blob>}
+ */
+const Load = (input , EmptyArray) => {
+    input.addEventListener('change' , () => {
 
+        for (let i = 0; i < input.files.length; i++) 
+        {
+            let Reader = new FileReader();
 
-const list = (path) => {
-    let files = fs__WEBPACK_IMPORTED_MODULE_0___default().readdirSync(path)
-    return files;
+            Reader.readAsDataURL(Path.files[i]);
+
+            Reader.addEventListener('load', () => {EmptyArray.push(Reader.result)})
+        }
+    })
+    return EmptyArray;
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (list);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Load);
+
+/***/ }),
+
+/***/ "./src/Show.js":
+/*!*********************!*\
+  !*** ./src/Show.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * 
+ * @param {HTMLElement} target
+ * @param {Event} mode
+ * @param {Function} callback
+ */
+const Show = (target , mode , callback) => {
+    target.addEventListener(
+        mode ,  callback
+    )
+}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Show);
 
 /***/ }),
 
@@ -13197,16 +13253,6 @@ module.exports = "data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%
 
 module.exports = "data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 8 8%27%3e%3cpath fill=%27%23198754%27 d=%27M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z%27/%3e%3c/svg%3e";
 
-/***/ }),
-
-/***/ "fs":
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** external {"F_OK":0,"R_OK":4,"W_OK":2,"X_OK":1,"constants":{"UV_FS_SYMLINK_DIR":1,"UV_FS_SYMLINK_JUNCTION":2,"O_RDONLY":0,"O_WRONLY":1,"O_RDWR":2,"UV_DIRENT_UNKNOWN":0,"UV_DIRENT_FILE":1,"UV_DIRENT_DIR":2,"UV_DIRENT_LINK":3,"UV_DIRENT_FIFO":4,"UV_DIRENT_SOCKET":5,"UV_DIRENT_CHAR":6,"UV_DIRENT_BLOCK":7,"S_IFMT":61440,"S_IFREG":32768,"S_IFDIR":16384,"S_IFCHR":8192,"S_IFBLK":24576,"S_IFIFO":4096,"S_IFLNK":40960,"S_IFSOCK":49152,"O_CREAT":64,"O_EXCL":128,"UV_FS_O_FILEMAP":0,"O_NOCTTY":256,"O_TRUNC":512,"O_APPEND":1024,"O_DIRECTORY":65536,"O_NOATIME":262144,"O_NOFOLLOW":131072,"O_SYNC":1052672,"O_DSYNC":4096,"O_DIRECT":16384,"O_NONBLOCK":2048,"S_IRWXU":448,"S_IRUSR":256,"S_IWUSR":128,"S_IXUSR":64,"S_IRWXG":56,"S_IRGRP":32,"S_IWGRP":16,"S_IXGRP":8,"S_IRWXO":7,"S_IROTH":4,"S_IWOTH":2,"S_IXOTH":1,"F_OK":0,"R_OK":4,"W_OK":2,"X_OK":1,"UV_FS_COPYFILE_EXCL":1,"COPYFILE_EXCL":1,"UV_FS_COPYFILE_FICLONE":2,"COPYFILE_FICLONE":2,"UV_FS_COPYFILE_FICLONE_FORCE":4,"COPYFILE_FICLONE_FORCE":4},"promises":{"constants":{"UV_FS_SYMLINK_DIR":1,"UV_FS_SYMLINK_JUNCTION":2,"O_RDONLY":0,"O_WRONLY":1,"O_RDWR":2,"UV_DIRENT_UNKNOWN":0,"UV_DIRENT_FILE":1,"UV_DIRENT_DIR":2,"UV_DIRENT_LINK":3,"UV_DIRENT_FIFO":4,"UV_DIRENT_SOCKET":5,"UV_DIRENT_CHAR":6,"UV_DIRENT_BLOCK":7,"S_IFMT":61440,"S_IFREG":32768,"S_IFDIR":16384,"S_IFCHR":8192,"S_IFBLK":24576,"S_IFIFO":4096,"S_IFLNK":40960,"S_IFSOCK":49152,"O_CREAT":64,"O_EXCL":128,"UV_FS_O_FILEMAP":0,"O_NOCTTY":256,"O_TRUNC":512,"O_APPEND":1024,"O_DIRECTORY":65536,"O_NOATIME":262144,"O_NOFOLLOW":131072,"O_SYNC":1052672,"O_DSYNC":4096,"O_DIRECT":16384,"O_NONBLOCK":2048,"S_IRWXU":448,"S_IRUSR":256,"S_IWUSR":128,"S_IXUSR":64,"S_IRWXG":56,"S_IRGRP":32,"S_IWGRP":16,"S_IXGRP":8,"S_IRWXO":7,"S_IROTH":4,"S_IWOTH":2,"S_IXOTH":1,"F_OK":0,"R_OK":4,"W_OK":2,"X_OK":1,"UV_FS_COPYFILE_EXCL":1,"COPYFILE_EXCL":1,"UV_FS_COPYFILE_FICLONE":2,"COPYFILE_FICLONE":2,"UV_FS_COPYFILE_FICLONE_FORCE":4,"COPYFILE_FICLONE_FORCE":4}}} ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module) => {
-
-module.exports = undefined;
-
 /***/ })
 
 /******/ 	});
@@ -13320,16 +13366,35 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
 /* harmony import */ var bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.css */ "./node_modules/bootstrap/dist/css/bootstrap.css");
-/* harmony import */ var _list__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./list */ "./src/list.js");
+/* harmony import */ var _Load__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Load */ "./src/Load.js");
+/* harmony import */ var _Show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Show */ "./src/Show.js");
+// Imports :
 
 
 
 
-let path_value = document.getElementById('path_value').value
 
-console.log((0,_list__WEBPACK_IMPORTED_MODULE_2__["default"])(path_value))
+
+
+
+// // // // // // // // // // // // // //
+
+
+let Files = document.getElementById('Path')
+let ArrayOfImages = new Array();
+
+const BlobImages = (0,_Load__WEBPACK_IMPORTED_MODULE_2__["default"])(Files , ArrayOfImages);
+
+
+(0,_Show__WEBPACK_IMPORTED_MODULE_3__["default"])(
+    Files , 'load' , () => {
+        console.log("This file is loaded")
+    }
+)
+
+
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle0c25100dd766a88087b0.js.map
+//# sourceMappingURL=bundle48159282506facced012.js.map

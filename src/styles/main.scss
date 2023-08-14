@@ -1,6 +1,20 @@
+/**
+Generic Customization
+**/
+
 .container {
     background-color:#ccc;
     border:0.5px solid #ccc;
     padding:25px;
     border-radius:15px;
 }
+
+.Image-galery {
+    display:grid;
+    grid-template-columns:repeat(3 , auto);
+}
+
+.Image {
+    width:50px;
+}
+
