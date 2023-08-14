@@ -51,9 +51,6 @@ To use the 2038 Web App Image Previewer, follow these steps:
 3. **Navigate Between Images:**
    If you've uploaded multiple images, you can navigate between them using the arrow keys on your keyboard or the navigation buttons provided.
 
-4. **Adjust Settings:**
-   Customize the app's settings by clicking the "Settings" icon. Modify options like default zoom level and background color to suit your preferences.
-
 ## Contributing
 
 Contributions are welcome! If you find any bugs or have suggestions for improvements, feel free to create an issue or submit a pull request in this repository.
