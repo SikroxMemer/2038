@@ -66,3 +66,7 @@ For any inquiries or questions, please reach out to me at [simoarmymen9@gmail.co
 ---
 
 Give the 2038 Web App Image Previewer a try and make image previewing an enjoyable part of your digital experience!
+
+## Test
+
+To test simply go to [https://sikroxmemer.github.io/2038/dist/]
