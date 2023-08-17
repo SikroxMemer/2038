@@ -1,74 +1,73 @@
-import './styles/main.scss';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js'
-import icon from './assets/icon.png';
-/**
- * 
- * @param {HTMLInputElement} input 
- * @param {Array<null>} EmptyArray 
- * @returns {Array<Blob>}
- */
-const Load = (input, EmptyArray) => {
-    input.addEventListener('change', () => {
-
-        for (let i = 0; i < input.files.length; i++) {
-            let Reader = new FileReader();
-
-            Reader.readAsDataURL(input.files[i]);
-
-            Reader.addEventListener('load', () => { EmptyArray.push(Reader.result) })
-        }
-    })
-    return EmptyArray;
-}
-/**
- * 
- * @param {HTMLElement} target
- * @param {Event} mode
- * @param {Function} callback
- */
-const Show = (target, mode, callback) => {
-    target.addEventListener(
-        mode, callback
-    )
-}
-
-document.getElementById('link').setAttribute('href', icon)
-
-let Files = document.getElementById('Path');
+// Elements
+let Files = document.getElementById('Files');
 let Button = document.getElementById('Show');
 let MyForm = document.getElementById('myForm');
 let Reset = document.getElementById('Reset');
+//
 
-Files.style = "content:Select some files;"
+// Imports
+import './styles/main.scss';
+import 'bootstrap/dist/css/bootstrap.css';
 
-MyForm.addEventListener('submit', event => { event.preventDefault(); });
+import 'bootstrap/dist/js/bootstrap.js'
+import icon from './assets/icon.png';
+// 
 
-let ArrayOfImages = new Array();
+document.getElementById('link').setAttribute(
+    'href', icon
+);
 
-const BlobImages = Load(Files, ArrayOfImages);
-const UI = () => {
-    if (BlobImages.length == 0) {
-        Button.disabled = false;
+MyForm.addEventListener('submit', e => {
+    e.preventDefault();
+});
+
+Reset.addEventListener('click', () => {
+    window.location.reload()
+});
+
+const BlobImages = new Array();
+
+Files.addEventListener('change', () => {
+    for (let i = 0; i < Files.files.length; i++) {
+        let input = Files.files[i]
+        let reader = new FileReader();
+        reader.readAsDataURL(input);
+        reader.addEventListener('load', () => {
+            BlobImages.push(reader.result)
+        })
     }
-    else {
-        Button.disabled = true;
-    }
-    BlobImages.forEach((image) => {
-
-        let Div = document.createElement('div')
-        let Image = document.createElement('img');
-
-        Image.src = image;
-        Div.append(Image)
-
-        Div.setAttribute('class', 'col-md-4 col-sm-6 col-12')
-        Image.setAttribute('class', 'w-100 mb-2 rounded')
-
-        document.getElementById('Gallery').append(Div);
-    });
-}
+    console.log(BlobImages)
+})
 
 
-Reset.addEventListener('click', () => { window.location.reload() })
-Show(Button, 'click', UI);
+Button.addEventListener(
+    'click', () => {
+
+        if (BlobImages.length == 0) 
+        {
+            Button.disabled = false;
+        }
+        else {
+            Button.disabled = true;
+        }
+
+        BlobImages.forEach((image) => {
+
+            let Div     = document.createElement('div')
+            let Image   = document.createElement('img');
+            let Image_Section = document.createElement('div');
+
+            Image_Section.setAttribute('class' , 'd-flex flex-column')    
+            Image.src = image;
+
+            
+        
+            Image_Section.append(Image)
+            Div.append(Image_Section)
+
+            Div.setAttribute('class', 'col-md-4 col-sm-6 col-12')
+            Image.setAttribute('class', 'w-100 mb-2 rounded')
+
+            document.getElementById('Gallery').append(Div);
+        })
+})
